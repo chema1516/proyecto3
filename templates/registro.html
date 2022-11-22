@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block content %}
+<footer>
+<div class="container">
+ <br>
+ <center><h1><strong><font color="#fffff"> registros</font></strong></h1></center>
+ <center><table width="80%" border="0" cellpadding="2%"></table></center>
+<tr>
+<td>
+<table class="table">
+<thead>
+<tr>
+<th class="table-dark" scope="col">Nombre de la Persona</th>
+<td class="table-dark"></td>
+</tr>
+</thead>
+<tbody>
+<table class="table table-striped table-danger">
+{% for i in rec %}
+<tr>
+<td width="55%">{{i.1}}</td>
+<td width="15%"><center><a class="btn btn-danger"
+href="/contacto_fdetalle/{{i.0}}" role="button">Detalle</a></center></td>
+<td width="15%"><center><a class="btn btn-danger"
+href="/puesto_editar/{{i.0}}" role="button">Editar</a></center></td>
+<td width="15%"><center><a class="btn btn-outline-danger"
+href="/registro_borrar/{{i.0}}" role="button">Borrar</a></center></td>
+</tr>
+{% endfor %}
+</table>
+</tbody>
+</table>
+</form>
+</div>
+    <h3>
+    <h3><CENTER> <b><font color="#fffff"> Detalle: </font> </b> </CENTER></h3>
+    <br>
+    <form class="row g-3" action="/contacto_fdetalle/" method="GET">
+
+    <div class="col-md-4">
+    <label for="nombre" class="form-label"><font color="#fffff">Nombre</font></label>
+    <input type="text" class="form-control" name="nombre" id="nombre" value="{{dat.1}}" readonly="readonly"></input>
+    </div>
+    <br>
+    <div class="col-md-4">
+        <label for="correo" class="form-label"><font color="#fffff">Correo</font></label>
+        <input type="text" class="form-control" name="correo" id="correo" value="{{dat.2}}" readonly="readonly"></input>
+    </div>
+    <div class="col-md-4">
+        <label for="telefono" class="form-label"><font color="#fffff">Telefono</font></label>
+        <input type="text" class="form-control" name="telefono" id="telefono" value="{{dat.3}}" readonly="readonly"></input>
+    </div>
+    <div class="col-md-12">
+        <label for="problema" class="form-label"><font color="#fffff">Problema</font></label>
+        <input type="text" class="form-control" name="problema" id="problema" value="{{dat.4}}" readonly="readonly"></input>
+    </div>
+    <div class="col-md-6">
+        <label for="direccion" class="form-label"><font color="#fffff">Direccion</font></label>
+        <input type="text" class="form-control" name="direccion" id="direccion" value="{{dat.5}}" readonly="readonly"></input>
+    </div>
+    <div class="col-md-4">
+        <label for="fecha" class="form-label"><font color="#fffff">Fecha</font></label>
+        <input type="date" class="form-control" name="fecha" id="fecha" value="{{dat.6}}" readonly="readonly"></input>
+    </div>
+</form>
+</div>
+</footer>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+<aside>
+<div class="container">
+    <h3>
+    <CENTER> <b><font color="#ffffff"> Agenda tu cita</font>  </b> </CENTER>
+    </h3>
+    <br>
+  <form class="row g-3" action="/contacto_fagrega" method="post">
+    <div class="col-md-4">
+        <label for="nombre" class="form-label">nombre usuario</label>
+        <input type="text" class="form-control" name="nombre" id="nombre" required></input>
+    </div>
+    <div class="col-md-4">
+      <label for="correo" class="form-label">correo</label>
+      <input type="text" class="form-control" name="correo" id="correo" required></input>
+  </div>
+  <div class="col-md-4">
+      <label for="telefono" class="form-label">telefono</label>
+      <input type="text" class="form-control" name="telefono" id="telefono" required></input>
+  </div>
+  <div class="col-md-12">
+      <label for="problema" class="form-label">¿Cual es su Problema?</label>
+      <input type="text" class="form-control" name="problema" id="problema" required></input>
+  </div>
+  <div class="col-md-6">
+      <label for="direccion" class="form-label">direccion</label>
+      <input type="text" class="form-control" name="direccion" id="direccion" required></input>
+  </div>
+  <div class="col-md-4">
+      <label for="fecha" class="form-label">fecha</label>
+      <input type="date" class="form-control" name="fecha" id="fecha" required></input>
+  </div>
+
+<br>
+<div class="col-12">
+  <button type="submit" class="btn btn-danger">Enviar</button>
+</div>
+</body>
+</div>
+</aside>
+{% endblock %}
